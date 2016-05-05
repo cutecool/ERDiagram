@@ -19,6 +19,10 @@ public enum MenuEnum {
 	}
 	
 	public String getDescription() {
-		return StringUtil.stringAppend(Integer.toString(mInstance), ". ", mDescription);
+		return StringUtil.StringAppend(mInstance, ". ", mDescription);
+	}
+	
+	public String getInstance() {
+		return String.valueOf(mInstance);
 	}
 }

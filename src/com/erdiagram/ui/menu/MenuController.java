@@ -1,8 +1,12 @@
 package com.erdiagram.ui.menu;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class MenuController {
+	
+	private String mMenuSelect;
 	
 	public MenuController() {}
 	
@@ -15,10 +19,17 @@ public class MenuController {
 			System.out.println(MenuEnum.DisplayTable.getDescription());
 			System.out.println(MenuEnum.Exit.getDescription());
 			System.out.print("> ");
+			
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			try {
-				System.in.read();
+				mMenuSelect = br.readLine();
 			} catch (IOException e) {
 				e.printStackTrace();
+			}
+			
+			if (mMenuSelect.equals(MenuEnum.Exit.getInstance())) {
+				System.out.println("Goodbye!");
+				return;
 			}
 		}
 	}

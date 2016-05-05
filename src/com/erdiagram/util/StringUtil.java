@@ -7,10 +7,17 @@ public class StringUtil {
 //		return stringAppend(str);
 //	}
 	
-	public static String stringAppend(String... strings) {
+	public static String StringAppend(Object... aSa) {
+		return StringAppend(null, aSa);
+	}
+	
+	private static String StringAppend(String aSeperator, Object... aSa) {
 		StringBuilder sb = new StringBuilder();
-		for (String str : strings) {
-			sb.append(str);
+		for (Object obj : aSa) {
+			sb.append(obj);
+			if (aSeperator != null) {
+				sb.append(aSeperator);
+			}
 		}
 		return sb.toString();
 	}
