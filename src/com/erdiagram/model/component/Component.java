@@ -1,41 +1,25 @@
 package com.erdiagram.model.component;
 
-public class Component {
+public abstract class Component {
 
 	protected int mId;
 	protected int mType;
 	protected String mText;
 //	protected Connector mConnections;
 	
-	public void setId(int aId) {
-		mId = aId;
-	}
+	abstract public void setId(int aId);
 	
-	public int getId() {
-		return mId;
-	}
+	abstract public int getId();
 	
-	public void setType(int aType) {
-		mType = aType;
-	}
+	abstract public void setType(int aType);
 	
-	public int getType() {
-		return mType;
-	}
+	abstract public int getType();
 	
-	public void setText(String aText) {
-		mText = aText;
-	}
+	abstract public void setText(String aText);
 	
-	public String getText() {
-		return mText;
-	}
+	abstract public String getText();
 	
-	public void ConnectTo(Component aComponent) {
-		
-	}
+	abstract public void ConnectTo(Component aComponent);
 	
-	public boolean canConnectTo(Component aComponent) {
-		return false;
-	}
+	abstract public boolean canConnectTo(Component aComponent);
 }

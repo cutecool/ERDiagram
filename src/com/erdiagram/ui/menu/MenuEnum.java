@@ -18,7 +18,7 @@ public enum MenuEnum {
 		mDescription = aDescription;
 	}
 	
-	public String getDescription() {
+	public String getDesc() {
 		return StringUtil.StringAppend(mInstance, ". ", mDescription);
 	}
 	

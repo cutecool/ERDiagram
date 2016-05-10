@@ -1,8 +1,6 @@
 package com.erdiagram.ui.menu;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import com.erdiagram.util.StringUtil;
 
 public class MenuController {
 	
@@ -12,20 +10,15 @@ public class MenuController {
 	
 	public void executeMenu() {
 		while(true) {
-			System.out.println(MenuEnum.AddNode.getDescription());
-			System.out.println(MenuEnum.Connect2Nodes.getDescription());
-			System.out.println(MenuEnum.DisplayDiagram.getDescription());
-			System.out.println(MenuEnum.SetPrimaryKey.getDescription());
-			System.out.println(MenuEnum.DisplayTable.getDescription());
-			System.out.println(MenuEnum.Exit.getDescription());
-			System.out.print("> ");
+			StringUtil.cout(MenuEnum.AddNode.getDesc());
+			StringUtil.cout(MenuEnum.Connect2Nodes.getDesc());
+			StringUtil.cout(MenuEnum.DisplayDiagram.getDesc());
+			StringUtil.cout(MenuEnum.SetPrimaryKey.getDesc());
+			StringUtil.cout(MenuEnum.DisplayTable.getDesc());
+			StringUtil.cout(MenuEnum.Exit.getDesc());
+			StringUtil.cout("> ");
 			
-			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-			try {
-				mMenuSelect = br.readLine();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			mMenuSelect = StringUtil.cin();
 			
 			if (mMenuSelect.equals(MenuEnum.Exit.getInstance())) {
 				System.out.println("Goodbye!");

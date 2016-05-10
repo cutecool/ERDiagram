@@ -1,17 +1,16 @@
 package com.erdiagram.util;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class StringUtil {
 
-//	public static String stringAppend(Integer... strings, String... strings2) {
-//		String[] str = strings + strings2;
-//		return stringAppend(str);
-//	}
-	
 	public static String StringAppend(Object... aSa) {
 		return StringAppend(null, aSa);
 	}
 	
-	private static String StringAppend(String aSeperator, Object... aSa) {
+	public static String StringAppend(String aSeperator, Object... aSa) {
 		StringBuilder sb = new StringBuilder();
 		for (Object obj : aSa) {
 			sb.append(obj);
@@ -20,5 +19,21 @@ public class StringUtil {
 			}
 		}
 		return sb.toString();
+	}
+	
+	public static void cout(String aStr) {
+		System.out.println(aStr);
+	}
+	
+	public static String cin() {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			return br.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return "";
 	}
 }
