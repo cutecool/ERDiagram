@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 
 public class StringUtil {
 
-	public static String StringAppend(Object... aSa) {
-		return StringAppend(null, aSa);
+	public static String append(Object... aSa) {
+		return append(null, aSa);
 	}
 	
-	public static String StringAppend(String aSeperator, Object... aSa) {
+	public static String append(String aSeperator, Object... aSa) {
 		StringBuilder sb = new StringBuilder();
 		for (Object obj : aSa) {
 			sb.append(obj);

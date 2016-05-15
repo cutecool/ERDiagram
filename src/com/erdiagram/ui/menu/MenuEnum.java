@@ -19,7 +19,7 @@ public enum MenuEnum {
 	}
 	
 	public String getDesc() {
-		return StringUtil.StringAppend(mInstance, ". ", mDescription);
+		return StringUtil.append(mInstance, ". ", mDescription);
 	}
 	
 	public String getInstance() {
